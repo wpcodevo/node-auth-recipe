@@ -13,7 +13,7 @@ const app = express();
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'modules/views'))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'publics')))
 
 
 // Database
