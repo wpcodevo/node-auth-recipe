@@ -1,0 +1,15 @@
+header.header
+    nav.nav
+        .nav__center.container
+            a.logo(href="/")
+                h2 codev recipes
+            ul.nav__list
+                if user
+                    span Hello #{user.name.split(' ')[0]}
+                    a
+                        button.btn.nav__btn.signup.logout logout
+                else
+                    a(href="/login")
+                        button.btn.nav__btn Login In
+                    a(href="/signup")
+                        button.btn.nav__btn.signup Sign Up

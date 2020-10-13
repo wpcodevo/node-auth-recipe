@@ -1,0 +1,27 @@
+extends base
+
+block content
+    main.main
+        .container.form__container
+            form.form.signup__form
+                h1 Sign Up
+                .form__control
+                    label(for="name") Name
+                    input#name.name(type="text" name="name")
+                    .error
+                .form__control
+                    label(for="email") Email
+                    input#email.email(type="email" name="email")
+                    .error
+                .form__control
+                    label(for="password") Password
+                    input#password.password(type="password" name="password")
+                    .error
+                .form__control
+                    label(for="passwordConfirm") Confirm Password
+                    input#passwordConfirm.passwordConfirm(type="password" name="passwordConfirm")
+                    .error
+                button(type="submit") Sign Up
+                p
+                    | Already have an account? 
+                    a(href="/login") login

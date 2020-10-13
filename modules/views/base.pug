@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        // Favicon
+        link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+        // Fonts
+        link(href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap" rel="stylesheet")
+        // StyleSheet
+        link(rel="stylesheet" href="/src/simpleNotification.css")
+        link(rel="stylesheet" href="/css/style.css")
+        title Codev | #{title}
+    body
+        // Header
+        include partials/_header
+        // Content
+        block content
+
+        // footer
+        include partials/_footer
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js")
+        script(src="/src/simpleNotification.js")
+        script(src="/js/forgotPassword.js")
+        script(src="/js/resetPassword.js")
+        script(src="/js/login.js")
+        script(src="/js/signup.js")

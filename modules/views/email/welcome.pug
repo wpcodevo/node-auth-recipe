@@ -1,0 +1,17 @@
+extends emailBase
+
+block content
+    p Hi #{firstName},
+    p Welcome to Codev, we're glad to have you 🎉🙏
+    p We're all a big familiy here, so make sure to subscribe to our channel so you don't miss any video!
+    table.btn.btn-primary(role='presentation' border='0' cellpadding='0' cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation' border='0' cellpadding='0' cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}` target='_blank') Subscribe to our channel
+    p If you need any help with booking your next tour, please don't hesitate to contact me!
+    p - Ziddah Edem, CEO

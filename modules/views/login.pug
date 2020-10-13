@@ -1,0 +1,21 @@
+extends base
+
+block content
+    main.main
+        .container.form__container
+            form.form.login__form
+                h1 Login
+                .form__control
+                    label(for="email") Email
+                    input#email.email(type="email" name="email")
+                    .error
+                .form__control
+                    label(for="password") Password
+                    input#password.password(type="password" name="password")
+                    .error
+
+                button(type="submit") Login
+                .form__bottom
+                    a(href="/forgotPassword") Can't login?
+                    a(href="/signup") Don't have an account?
+
