@@ -54,7 +54,7 @@ module.exports = class Email{
   // Create transport
   await this.newTransport().sendMail(mailOptions)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
 
