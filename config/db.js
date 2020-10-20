@@ -16,4 +16,5 @@ const connectDB = async () => {
 
   console.log(`Database connected successfully on ${conn.connection.host}`);
 };
-module.exports = connectDB;
+
+export default connectDB;
