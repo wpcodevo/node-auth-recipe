@@ -1,30 +1,32 @@
-exports.getOverview = (req,res)=>{
-  res.status(200).render('overview',{
-    title: 'overview'
-  })
-}
-exports.getLogin = (req,res)=>{
+export const getOverview = (req, res) => {
+  res.status(200).render('overview', {
+    title: 'overview',
+  });
+};
+
+export const getLogin = (req, res) => {
   res.status(200).render('login', {
-    title: 'Log into your account'
-  })
-}
-exports.getSignup = (req,res)=>{
-  res.status(200).render('signup',{
-    title: 'Create your account'
-  })
-}
-exports.getRecipes = (req,res)=>{
-  res.status(200).render('recipes',{
-    title: 'Recipes'
-  })
-}
-exports.getForgotPassword = (req,res)=>{
-  res.status(200).render('forgotPassword',{
-    title: 'Forgot Password'
-  })
-}
-exports.getResetPassword = (req,res)=>{
+    title: 'Log into your account',
+  });
+};
+
+export const getSignup = (req, res) => {
+  res.status(200).render('signup', {
+    title: 'Create your account',
+  });
+};
+export const getRecipes = (req, res) => {
+  res.status(200).render('recipes', {
+    title: 'Recipes',
+  });
+};
+export const getForgotPassword = (req, res) => {
+  res.status(200).render('forgotPassword', {
+    title: 'Forgot Password',
+  });
+};
+export const getResetPassword = (req, res) => {
   res.status(200).render('resetPassword', {
-    title: 'Reset Password'
-  })
-}
+    title: 'Reset Password',
+  });
+};

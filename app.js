@@ -3,17 +3,22 @@ import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 
-import connectDB from './config/db';
-import userRoute from './modules/users/routes';
-import AppError from './modules/utils/errors/appError';
-import globalErrorHandler from './modules/utils/errors/errorController';
-import viewsRoute from './modules/views/routes';
+import connectDB from './config/db.js';
+import userRoute from './modules/users/routes.js';
+import AppError from './modules/utils/errors/appError.js';
+import globalErrorHandler from './modules/utils/errors/errorController.js';
+import viewsRoute from './modules/views/routes.js';
+
+const moduleURL = new URL(import.meta.url);
+const __dirname = path.dirname(moduleURL.pathname);
+
+console.log(`${__dirname}/modules/views`);
 
 const app = express();
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'modules/views'));
-app.use(express.static(path.join(__dirname, 'publics')));
+app.set('views', './modules/views');
+app.use(express.static('./public'));
 
 // Database
 connectDB();
@@ -40,6 +45,4 @@ app.all('*', (req, res, next) => {
 // Global Error Handler
 app.use(globalErrorHandler);
 
-module.exports = app;
-
-console.log('hello');
+export default app;

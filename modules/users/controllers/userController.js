@@ -1,8 +1,8 @@
-const User = require('../models/userModel');
-const catchAsync = require('../../utils/catchAsync');
-const AppError = require('../../utils/errors/appError');
+import User from '../models/userModel.js';
+import catchAsync from '../../utils/catchAsync.js';
+import AppError from '../../utils/errors/appError.js';
 
-exports.getAllUsers = catchAsync(async (req, res, next) => {
+export const getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.find();
 
   res.status(200).json({
@@ -14,7 +14,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.createUser = catchAsync(async (req, res, next) => {
+export const createUser = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
 
   res.status(201).json({
@@ -25,7 +25,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getUser = catchAsync(async (req, res, next) => {
+export const getUser = catchAsync(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -40,7 +40,7 @@ exports.getUser = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateUser = catchAsync(async (req, res, next) => {
+export const updateUser = catchAsync(async (req, res, next) => {
   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -58,7 +58,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.deleteUser = catchAsync(async (req, res, next) => {
+export const deleteUser = catchAsync(async (req, res, next) => {
   const user = await User.findByIdAndDelete(req.params.id);
 
   if (!user) {

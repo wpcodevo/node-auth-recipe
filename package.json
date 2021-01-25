@@ -3,18 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon  --exec babel-node server.js",
+    "start": "nodemon server.js",
     "build": "cross-env NODE_ENV=production nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.12.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -29,7 +26,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",

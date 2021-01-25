@@ -1,5 +1,5 @@
-import path from 'path';
 import dotenv from 'dotenv';
+import app from './app.js';
 
 process.on('uncaughtException', (err) => {
   console.log(`UNCAUGHT EXCEPTION Shutting down...`);
@@ -7,9 +7,7 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-dotenv.config({ path: path.join(__dirname, '/config/config.env') });
-
-const app = require('./app');
+dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {

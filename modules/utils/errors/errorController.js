@@ -1,4 +1,4 @@
-const AppError = require('./appError');
+import AppError from './appError.js';
 
 const handleDuplicateErrorDB = (err) => {
   const value = err.message.match(/(["'])(\\?.)*?\1/)[0];
@@ -77,7 +77,7 @@ const sendErrorProd = (err, req, res) => {
   });
 };
 
-module.exports = (err, req, res, next) => {
+export default (err, req, res, next) => {
   err.status = err.status || 'error';
   err.statusCode = err.statusCode || 500;
 
